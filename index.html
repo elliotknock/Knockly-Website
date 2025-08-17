@@ -8,747 +8,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet" />
-    <style>
-      :root {
-        /* Primary Color Palette - Ocean Blue to Teal */
-        --primary-50: #f0fdfa;
-        --primary-100: #ccfbf1;
-        --primary-200: #99f6e4;
-        --primary-300: #5eead4;
-        --primary-400: #2dd4bf;
-        --primary-500: #14b8a6;
-        --primary-600: #0d9488;
-        --primary-700: #0f766e;
-        --primary-800: #115e59;
-        --primary-900: #134e4a;
-
-        /* Accent Colors */
-        --accent-light: #67e8f9;
-        --accent-dark: #0891b2;
-
-        /* Neutral Colors */
-        --gray-50: #f8fafc;
-        --gray-100: #f1f5f9;
-        --gray-200: #e2e8f0;
-        --gray-300: #cbd5e1;
-        --gray-400: #94a3b8;
-        --gray-500: #64748b;
-        --gray-600: #475569;
-        --gray-700: #334155;
-        --gray-800: #1e293b;
-        --gray-900: #0f172a;
-
-        /* Gradients */
-        --gradient-primary: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-400) 100%);
-        --gradient-accent: linear-gradient(135deg, var(--accent-dark) 0%, var(--primary-500) 100%);
-        --gradient-dark: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
-      }
-
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        color: var(--gray-300);
-        background-color: var(--gray-900);
-      }
-
-      /* Custom Navbar Styling */
-      .navbar-custom {
-        background: var(--gradient-dark) !important;
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 1rem 0;
-        transition: all 0.3s ease;
-      }
-
-      .navbar-custom .navbar-brand {
-        font-size: 1.5rem;
-        font-weight: 700;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .navbar-custom .navbar-nav .nav-link {
-        color: var(--gray-300) !important;
-        font-weight: 500;
-        margin: 0 0.5rem;
-        position: relative;
-        transition: color 0.3s ease;
-      }
-
-      .navbar-custom .navbar-nav .nav-link:hover {
-        color: var(--primary-400) !important;
-      }
-
-      .navbar-custom .navbar-nav .nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 50%;
-        background: var(--gradient-primary);
-        transition: all 0.3s ease;
-        transform: translateX(-50%);
-      }
-
-      .navbar-custom .navbar-nav .nav-link:hover::after {
-        width: 100%;
-      }
-
-      .navbar-toggler {
-        border: none !important;
-        padding: 0.25rem 0.5rem;
-      }
-
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28203, 213, 225, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      }
-
-      /* Hero Section */
-      .hero {
-        background: var(--gradient-primary);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        color: white;
-        position: relative;
-        overflow: hidden;
-        padding-top: 100px;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat center center;
-        background-size: cover;
-        animation: float 20s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px) rotate(0deg);
-        }
-        50% {
-          transform: translateY(-20px) rotate(2deg);
-        }
-      }
-
-      .hero-image {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 2rem;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        height: 400px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero-image::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        animation: shimmer 3s ease-in-out infinite;
-      }
-
-      @keyframes shimmer {
-        0% {
-          transform: translateX(-100%) translateY(-100%) rotate(45deg);
-        }
-        50% {
-          transform: translateX(100%) translateY(100%) rotate(45deg);
-        }
-        100% {
-          transform: translateX(-100%) translateY(-100%) rotate(45deg);
-        }
-      }
-
-      .code-visual {
-        font-family: "Courier New", monospace;
-        font-size: 0.9rem;
-        color: var(--primary-100);
-        line-height: 1.6;
-        text-align: left;
-        z-index: 2;
-        position: relative;
-      }
-
-      .code-line {
-        margin-bottom: 0.5rem;
-        opacity: 0;
-        animation: typewriter 0.5s ease-out forwards;
-      }
-
-      .code-line:nth-child(1) {
-        animation-delay: 0.5s;
-      }
-      .code-line:nth-child(2) {
-        animation-delay: 1s;
-      }
-      .code-line:nth-child(3) {
-        animation-delay: 1.5s;
-      }
-      .code-line:nth-child(4) {
-        animation-delay: 2s;
-      }
-      .code-line:nth-child(5) {
-        animation-delay: 2.5s;
-      }
-      .code-line:nth-child(6) {
-        animation-delay: 3s;
-      }
-
-      @keyframes typewriter {
-        to {
-          opacity: 1;
-        }
-      }
-
-      .keyword {
-        color: var(--accent-light);
-      }
-      .string {
-        color: var(--primary-200);
-      }
-      .function {
-        color: var(--primary-300);
-      }
-      .comment {
-        color: var(--gray-300);
-        font-style: italic;
-      }
-
-      .hero h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        background: linear-gradient(45deg, #fff, var(--primary-100));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1.2;
-      }
-
-      .hero p {
-        font-size: 1.25rem;
-        opacity: 0.9;
-        color: var(--primary-50);
-        line-height: 1.6;
-      }
-
-      /* Custom Buttons */
-      .btn-custom-primary {
-        background: var(--gradient-accent);
-        border: none;
-        border-radius: 50px;
-        padding: 1rem 2rem;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn-custom-primary::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s ease;
-      }
-
-      .btn-custom-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(20, 184, 166, 0.4);
-        color: white;
-      }
-
-      .btn-custom-primary:hover::before {
-        left: 100%;
-      }
-
-      .btn-custom-secondary {
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50px;
-        padding: 1rem 2rem;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-      }
-
-      .btn-custom-secondary:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-3px);
-        color: white;
-      }
-
-      /* Section Styling */
-      .section-dark {
-        background: var(--gradient-dark);
-        padding: 100px 0;
-        position: relative;
-      }
-
-      .section-darker {
-        background: var(--gray-900);
-        padding: 100px 0;
-        position: relative;
-      }
-
-      .section-dark::before,
-      .section-darker::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at 30% 20%, rgba(20, 184, 166, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(103, 232, 249, 0.1) 0%, transparent 50%);
-        pointer-events: none;
-      }
-
-      .section-title h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 1rem;
-      }
-
-      .section-title p {
-        color: var(--gray-300);
-        font-size: 1.125rem;
-      }
-
-      /* Pricing Cards */
-      .pricing-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 2.5rem 2rem;
-        backdrop-filter: blur(20px);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        height: 100%;
-      }
-
-      .pricing-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--primary-500);
-        box-shadow: 0 20px 60px rgba(20, 184, 166, 0.2);
-      }
-
-      .pricing-card.popular {
-        border-color: var(--primary-500);
-        box-shadow: 0 10px 40px rgba(20, 184, 166, 0.2);
-        transform: scale(1.05);
-      }
-
-      .pricing-card.popular::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--gradient-primary);
-      }
-
-      .popular-badge {
-        position: absolute;
-        top: -1px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--gradient-primary);
-        color: white;
-        padding: 0.5rem 1.5rem;
-        border-radius: 0 0 15px 15px;
-        font-size: 0.875rem;
-        font-weight: 600;
-      }
-
-      .plan-name {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 0.5rem;
-      }
-
-      .plan-description {
-        color: var(--gray-300);
-        margin-bottom: 2rem;
-        font-size: 0.95rem;
-      }
-
-      .plan-price {
-        font-size: 3rem;
-        font-weight: 800;
-        color: #ffffff;
-        margin-bottom: 0.5rem;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .plan-period {
-        color: var(--gray-400);
-        font-size: 1rem;
-        margin-bottom: 2rem;
-      }
-
-      .plan-features {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 2rem;
-        text-align: left;
-      }
-
-      .plan-features li {
-        color: var(--gray-300);
-        margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        position: relative;
-      }
-
-      .plan-features li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--primary-400);
-        font-weight: bold;
-      }
-
-      .plan-button {
-        width: 100%;
-        padding: 1rem 2rem;
-        border: 2px solid var(--primary-600);
-        border-radius: 50px;
-        background: transparent;
-        color: var(--primary-400);
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
-      }
-
-      .plan-button:hover {
-        background: rgba(20, 184, 166, 0.1);
-        border-color: var(--primary-400);
-        color: var(--primary-400);
-        transform: translateY(-2px);
-        text-decoration: none;
-      }
-
-      .plan-button.primary {
-        background: var(--gradient-primary);
-        color: white;
-        border-color: transparent;
-        box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
-      }
-
-      .plan-button.primary:hover {
-        background: var(--gradient-accent);
-        box-shadow: 0 15px 40px rgba(20, 184, 166, 0.4);
-        color: white;
-      }
-
-      /* Project Cards */
-      .project-card {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 2rem;
-        backdrop-filter: blur(20px);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        height: 100%;
-      }
-
-      .project-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--primary-500);
-        box-shadow: 0 20px 40px rgba(20, 184, 166, 0.1);
-      }
-
-      .project-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--gradient-primary);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-
-      .project-card:hover::before {
-        transform: scaleX(1);
-      }
-
-      .project-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: #ffffff;
-      }
-
-      .project-description {
-        color: var(--gray-400);
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-      }
-
-      .project-tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .tech-tag {
-        padding: 0.3rem 0.75rem;
-        background: rgba(20, 184, 166, 0.2);
-        border-radius: 15px;
-        font-size: 0.75rem;
-        color: var(--primary-300);
-      }
-
-      .project-link {
-        color: var(--primary-400);
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
-        margin-right: 1rem;
-      }
-
-      .project-link:hover {
-        color: var(--primary-300);
-        text-decoration: none;
-      }
-
-      /* Contact Form */
-      .contact-form {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        backdrop-filter: blur(20px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      }
-
-      .form-label {
-        color: var(--gray-300);
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-
-      .form-control {
-        background: rgba(255, 255, 255, 0.05);
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        color: #ffffff;
-        padding: 1rem;
-      }
-
-      .form-control:focus {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: var(--primary-500);
-        box-shadow: 0 0 0 0.2rem rgba(20, 184, 166, 0.25);
-        color: #ffffff;
-      }
-
-      .form-control::placeholder {
-        color: var(--gray-400);
-      }
-
-      .form-textarea {
-        min-height: 120px;
-        resize: vertical;
-      }
-
-      .btn-submit {
-        background: var(--gradient-primary);
-        border: none;
-        border-radius: 12px;
-        color: white;
-        font-weight: 600;
-        padding: 1rem 2rem;
-        width: 100%;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
-      }
-
-      .btn-submit:hover {
-        transform: translateY(-2px);
-        background: var(--gradient-accent);
-        box-shadow: 0 15px 40px rgba(20, 184, 166, 0.4);
-        color: white;
-      }
-
-      /* Footer */
-      .footer {
-        background: var(--gradient-dark);
-        color: var(--gray-300);
-        padding: 60px 0 30px;
-        position: relative;
-      }
-
-      .footer::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at 30% 20%, rgba(20, 184, 166, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(103, 232, 249, 0.1) 0%, transparent 50%);
-        pointer-events: none;
-      }
-
-      .footer-logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 1rem;
-      }
-
-      .footer-description {
-        color: var(--gray-300);
-        line-height: 1.6;
-        margin-bottom: 2rem;
-      }
-
-      .footer h5 {
-        color: white;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-      }
-
-      .footer a {
-        color: var(--gray-300);
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .footer a:hover {
-        color: var(--primary-400);
-        text-decoration: none;
-      }
-
-      .social-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        color: white;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        margin-right: 1rem;
-      }
-
-      .social-icon:hover {
-        background: rgba(20, 184, 166, 0.3);
-        border-color: var(--primary-400);
-        transform: translateY(-2px);
-        color: white;
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 2rem;
-        margin-top: 3rem;
-        color: var(--gray-400);
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-
-        .hero p {
-          font-size: 1.1rem;
-        }
-
-        .hero-image {
-          height: 300px;
-          margin-bottom: 3rem;
-        }
-
-        .code-visual {
-          font-size: 0.8rem;
-        }
-
-        .pricing-card.popular {
-          transform: none;
-        }
-
-        .section-title h2 {
-          font-size: 2rem;
-        }
-
-        .plan-price {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero h1 {
-          font-size: 2rem;
-        }
-
-        .hero-image {
-          height: 250px;
-        }
-
-        .code-visual {
-          font-size: 0.75rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Digital Nature</a>
+        <a class="navbar-brand" href="#home"><img id="knockly-logo" src="assets/images/knockly-logo.png" alt="" /></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
@@ -784,8 +50,8 @@
             <h1 class="mb-4">Modern Web Development That Captivates</h1>
             <p class="mb-4">We specialize in cutting-edge JavaScript websites, 3D web experiences, and responsive applications that perform flawlessly across all devices. Transform your digital presence with our expert team.</p>
             <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
-              <a href="https://www.digitalnature.io/" class="btn-custom-primary" style="flex: 1; max-width: 200px" target="_blank">Visit Our Main Site</a>
-              <a href="#projects" class="btn-custom-secondary" style="flex: 1; max-width: 200px">Explore Projects</a>
+              <a href="#contact" class="btn-custom-primary" style="flex: 1; max-width: 200px" target="_blank">Contact</a>
+              <a href="#pricing" class="btn-custom-secondary" style="flex: 1; max-width: 200px">Pricing</a>
             </div>
           </div>
           <div class="col-lg-6">
@@ -811,60 +77,67 @@
         <div class="row">
           <div class="col-lg-8 mx-auto text-center section-title mb-5">
             <h2>Choose Your Plan</h2>
-            <p>Flexible pricing options to fit your project needs and budget</p>
+            <p>Flexible pricing plans designed to suit your business needs and budget.</p>
+
+            <!-- Billing Toggle -->
+            <div class="billing-toggle mb-4">
+              <div class="toggle-switch">
+                <input type="checkbox" id="billingToggle" checked />
+                <button class="toggle-option" data-value="annually">Annually</button>
+                <button class="toggle-option" data-value="monthly">Monthly</button>
+                <div class="toggle-slider"></div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="row g-4">
           <div class="col-lg-4">
             <div class="pricing-card text-center">
-              <h3 class="plan-name">Yearly</h3>
-              <p class="plan-description">Perfect for long-term projects and ongoing partnerships</p>
-              <div class="plan-price">$2,500</div>
-              <div class="plan-period">per month, billed annually</div>
+              <h3 class="plan-name">Basic Plan</h3>
+              <div class="plan-price" data-monthly="£45.00" data-annual="£450.00"></div>
+              <div class="plan-period">billed annually</div>
               <ul class="plan-features">
-                <li>Custom web application development</li>
-                <li>Responsive design & mobile optimization</li>
+                <li>Custom Design & Development</li>
+                <li>Responsive Layout & Mobile Optimization</li>
                 <li>Performance optimization</li>
                 <li>SEO implementation</li>
                 <li>Monthly maintenance & updates</li>
-                <li>Priority support</li>
+                <li>Basic Support</li>
                 <li>Free hosting for first year</li>
                 <li>Analytics & reporting</li>
               </ul>
-              <a href="https://www.digitalnature.io/" class="plan-button" target="_blank">Get Started</a>
+              <a href="#contact" class="plan-button">Get Started</a>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="pricing-card popular text-center">
               <div class="popular-badge">Most Popular</div>
-              <h3 class="plan-name">Monthly</h3>
-              <p class="plan-description">Ideal for medium-term projects with flexible commitment</p>
-              <div class="plan-price">$3,500</div>
-              <div class="plan-period">per month</div>
+              <h3 class="plan-name">Pro Plan</h3>
+              <div class="plan-price" data-monthly="£67.50" data-annual="£675.00"></div>
+              <div class="plan-period">billed annually</div>
               <ul class="plan-features">
-                <li>Everything in Yearly plan</li>
-                <li>Advanced JavaScript frameworks</li>
-                <li>Database design & optimization</li>
-                <li>API development & integration</li>
-                <li>Security implementation</li>
-                <li>24/7 support</li>
-                <li>Weekly progress reports</li>
-                <li>Source code ownership</li>
+                <li>Everything in Basic plan</li>
+                <li>Unlimited Edits</li>
+                <li>Keyword SEO</li>
+                <li>Traffic Analytics</li>
+                <li>Speed Optimisation</li>
+                <li>Priority Support</li>
+                <li>Accessibility Compliance</li>
+                <li>Source Code Ownership</li>
               </ul>
-              <a href="https://www.digitalnature.io/" class="plan-button primary" target="_blank">Choose Plan</a>
+              <a href="#contact" class="plan-button primary">Get Started</a>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="pricing-card text-center">
               <h3 class="plan-name">E-Commerce</h3>
-              <p class="plan-description">Complete solution for online stores and digital marketplaces</p>
-              <div class="plan-price">$5,000</div>
-              <div class="plan-period">project-based</div>
+              <div class="plan-price" data-monthly="£199.50" data-annual="£1995.00"></div>
+              <div class="plan-period">billed annually</div>
               <ul class="plan-features">
-                <li>Full e-commerce platform</li>
+                <li>Custom Shopify Store</li>
                 <li>Payment gateway integration</li>
                 <li>Inventory management system</li>
                 <li>Customer account portal</li>
@@ -873,7 +146,7 @@
                 <li>Multi-device compatibility</li>
                 <li>6 months free maintenance</li>
               </ul>
-              <a href="https://www.digitalnature.io/" class="plan-button" target="_blank">Learn More</a>
+              <a href="#contact" class="plan-button">Get Started</a>
             </div>
           </div>
         </div>
@@ -989,6 +262,137 @@
               <div class="mt-auto">
                 <a href="https://www.digitalnature.io/" class="project-link" target="_blank">Live Demo →</a>
                 <a href="https://www.digitalnature.io/" class="project-link" target="_blank">Learn More →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-dark" id="about">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center section-title mb-5">
+            <h2>About Digital Nature</h2>
+            <p>We're passionate developers creating cutting-edge web experiences that captivate and perform</p>
+          </div>
+        </div>
+
+        <div class="row g-5 mb-5">
+          <div class="col-lg-6">
+            <div class="about-content">
+              <h3 class="mb-4">Our Mission</h3>
+              <p class="mb-4">At Digital Nature, we believe the web should be fast, beautiful, and accessible to everyone. We specialize in modern JavaScript frameworks, 3D web experiences, and performance optimization to deliver websites that not only look stunning but perform flawlessly across all devices.</p>
+
+              <h4 class="mb-3">What Sets Us Apart</h4>
+              <ul class="about-features">
+                <li>🚀 <strong>Performance First:</strong> Every site optimized for lightning-fast loading</li>
+                <li>🎨 <strong>Modern Design:</strong> Contemporary aesthetics that captivate users</li>
+                <li>📱 <strong>Mobile Excellence:</strong> Seamless experiences on every device</li>
+                <li>🔧 <strong>Custom Solutions:</strong> Tailored development for your unique needs</li>
+                <li>⚡ <strong>Cutting-Edge Tech:</strong> Latest frameworks and technologies</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="about-stats">
+              <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Client Satisfaction</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">24hr</div>
+                <div class="stat-label">Response Time</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h3 class="text-center mb-5">Frequently Asked Questions</h3>
+            <div class="faq-container">
+              <div class="faq-item">
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  <span>How long does it take to build a website?</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="collapse" id="faq1">
+                  <div class="faq-answer">
+                    <p>Project timelines vary based on complexity. A basic website typically takes 2-4 weeks, while more complex projects with custom features or e-commerce functionality can take 6-12 weeks. We'll provide a detailed timeline during our initial consultation.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  <span>Do you provide ongoing maintenance and support?</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="collapse" id="faq2">
+                  <div class="faq-answer">
+                    <p>Yes! All our plans include ongoing maintenance. This covers security updates, performance monitoring, content updates, and technical support. We believe in long-term partnerships with our clients.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  <span>Can you help with SEO and digital marketing?</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="collapse" id="faq3">
+                  <div class="faq-answer">
+                    <p>Absolutely. We implement SEO best practices in every website we build, including optimized meta tags, structured data, fast loading speeds, and mobile responsiveness. Our Pro plan includes keyword SEO and traffic analytics.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  <span>What technologies do you use?</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="collapse" id="faq4">
+                  <div class="faq-answer">
+                    <p>We use modern JavaScript frameworks like React, Vue.js, and Next.js. For 3D experiences, we leverage Three.js and WebGL. Our backend solutions include Node.js, Python, and cloud services like AWS. We always choose the best technology for your specific needs.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  <span>Do I own the source code and design?</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="collapse" id="faq5">
+                  <div class="faq-answer">
+                    <p>Yes, with our Pro and E-Commerce plans, you receive full ownership of the source code and design files upon project completion. This ensures you're never locked in and can make changes or migrate your site if needed.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                  <span>Can you work with my existing brand guidelines?</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="collapse" id="faq6">
+                  <div class="faq-answer">
+                    <p>Definitely! We love working within existing brand guidelines and can seamlessly integrate your brand colors, fonts, logos, and visual identity into a modern web experience that maintains brand consistency.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1120,39 +524,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            const navHeight = document.querySelector(".navbar").offsetHeight;
-            const targetPosition = target.offsetTop - navHeight;
-            window.scrollTo({
-              top: targetPosition,
-              behavior: "smooth",
-            });
-          }
-        });
-      });
-
-      // Navbar scroll effect
-      window.addEventListener("scroll", () => {
-        const navbar = document.querySelector(".navbar-custom");
-        if (window.scrollY > 100) {
-          navbar.style.background = "rgba(15, 23, 42, 0.98)";
-        } else {
-          navbar.style.background = "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)";
-        }
-      });
-
-      // Form submission handler
-      document.querySelector("form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("Thank you for your message! We'll get back to you within 24 hours.");
-      });
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
