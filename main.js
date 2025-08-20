@@ -95,3 +95,65 @@ document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
   alert("Thank you for your message! We'll get back to you within 24 hours.");
 });
+
+// Active navigation tracking
+function updateActiveNavigation() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  const navHeight = document.querySelector(".navbar").offsetHeight;
+
+  let currentSection = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - navHeight - 50; // 50px offset for better UX
+    const sectionHeight = section.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  // Special case for home section when at the very top
+  if (window.scrollY < 100) {
+    currentSection = "home";
+  }
+
+  // Update nav links
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    const href = link.getAttribute("href");
+    if (href === `#${currentSection}`) {
+      link.classList.add("active");
+    }
+  });
+}
+
+// Throttle function for better performance
+function throttle(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Add scroll event listener with throttling
+window.addEventListener("scroll", throttle(updateActiveNavigation, 100));
+
+// Update on page load
+document.addEventListener("DOMContentLoaded", updateActiveNavigation);
+
+// Update when clicking nav links (to handle manual navigation)
+document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
+  link.addEventListener("click", function () {
+    // Remove active from all links
+    document.querySelectorAll(".navbar-nav .nav-link").forEach((l) => l.classList.remove("active"));
+    // Add active to clicked link
+    this.classList.add("active");
+  });
+});
