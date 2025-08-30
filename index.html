@@ -3,22 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Knockly</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Professional Web Development Services UK | Custom Website Design | Knockly</title>
+    <meta name="description" content="Professional web development services in the UK. Custom website design, e-commerce solutions, and responsive web development for small businesses. Get your modern website today." />
+    <meta name="keywords" content="web development UK, custom website design, responsive web development, e-commerce development, small business websites, professional web design" />
+    <meta name="author" content="Knockly" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://knockly.co.uk/" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Professional Web Development Services UK | Knockly" />
+    <meta property="og:description" content="Modern website development that captivates. We build responsive, fast, and beautiful websites for businesses of all sizes." />
+    <meta property="og:image" content="https://knockly.co.uk/assets/images/knockly-social.jpg" />
+    <meta property="og:url" content="https://knockly.co.uk/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Knockly" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Professional Web Development Services UK | Knockly" />
+    <meta name="twitter:description" content="Modern website development that captivates. Custom design, responsive layouts, and professional results." />
+    <meta name="twitter:image" content="https://knockly.co.uk/assets/images/knockly-social.jpg" />
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
 
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebDesignCompany",
+      "name": "Knockly",
+      "description": "Professional web development services specializing in custom website design, responsive development, and e-commerce solutions for UK businesses.",
+      "url": "https://knockly.co.uk",
+      "logo": "https://knockly.co.uk/assets/images/knockly-logo.png",
+      "email": "knocklywebsites@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+      },
+      "areaServed": "GB",
+      "serviceType": "Web Development",
+      "priceRange": "££",
+      "offers": [
+        {
+          "@type": "Service",
+          "name": "Custom Website Development",
+          "description": "Bespoke website development with modern design and responsive layouts"
+        },
+        {
+          "@type": "Service", 
+          "name": "E-commerce Development",
+          "description": "Professional online store development with payment integration and inventory management"
+        },
+        {
+          "@type": "Service",
+          "name": "Website Maintenance",
+          "description": "Ongoing website support, updates, and performance optimization"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#home"><img id="knockly-logo" class="knockly-logo" src="assets/images/knockly-logo.png" alt="" /></a>
+        <a class="navbar-brand" href="#home" aria-label="Knockly Web Development Homepage">
+          <img id="knockly-logo" class="knockly-logo" src="assets/images/knockly-logo.png" alt="Knockly - Professional Web Development Services" />
+        </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -49,16 +114,16 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <h1 class="mb-4">Modern Website Development That Captivates</h1>
-            <p class="mb-4">We build websites that help businesses thrive.</br> Attract customers, build trust, and turn visitors into loyal clients. With a modern, responsive design, your business can grow online and stand out in today’s digital marketplace.</p>
+            <h1 class="mb-4">Professional Web Development Services UK - Modern Websites That Drive Results</h1>
+            <p class="mb-4">We build responsive, fast-loading websites that help UK businesses thrive online. From custom website development to e-commerce solutions, attract more customers and build trust with professional web design that converts visitors into loyal clients.</p>
             <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
-              <a href="#contact" class="btn-custom-primary" style="flex: 1; max-width: 200px" target="_blank">Contact</a>
-              <a href="#pricing" class="btn-custom-secondary" style="flex: 1; max-width: 200px">Pricing</a>
+              <a href="#contact" class="btn-custom-primary" style="flex: 1; max-width: 200px" aria-label="Get a free web development quote">Contact Us</a>
+              <a href="#pricing" class="btn-custom-secondary" style="flex: 1; max-width: 200px" aria-label="View web development pricing plans">View Pricing</a>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="hero-image">
-              <img src="assets/images/new.png" id="landing-image" alt="">
+              <img src="assets/images/new.png" id="landing-image" alt="Modern responsive website development showcase - professional web design examples" />
             </div>
           </div>
         </div>
@@ -71,7 +136,7 @@
         <div class="row">
           <div class="col-lg-8 mx-auto text-center section-title mb-5">
             <h2>About Knockly</h2>
-            <p>We're passionate about creating cutting-edge web experiences that engage and perform.</p>
+            <p>Passionate about creating cutting-edge web experiences that engage customers and drive business growth across the United Kingdom.</p>
           </div>
         </div>
 
@@ -83,66 +148,133 @@
                 <div class="code-line"><span class="keyword">class</span> <span class="function">Knockly</span> {</div>
                 <div class="code-line indent-1"><span class="keyword">constructor</span>() {</div>
                 <div class="code-line indent-2">this.mission = <span class="string">'Exceptional Web Experiences'</span>;</div>
-                <div class="code-line indent-2">this.expertise = [<span class="string">'HTML'</span>, <span class="string">'CSS'</span>, <span class="string">'Javascript'</span>];</div>
+                <div class="code-line indent-2">this.expertise = [<span class="string">'HTML5'</span>, <span class="string">'CSS3'</span>, <span class="string">'JavaScript'</span>, <span class="string">'React'</span>];</div>
                 <div class="code-line indent-2">this.commitment = <span class="string">'Amazing Support'</span>;</div>
                 <div class="code-line indent-1">}</div>
-                <div class="code-line">} <span class="comment">// Building the future</span></div>
+                <div class="code-line">} <span class="comment">// Building the future of web</span></div>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="about-content">
-              <h3 class="mb-4">Crafting Digital Experiences That Matter</h3>
-              <p class="mb-4">At Knockly, we believe the web should be fast, beautiful, and accessible to everyone. We specialize in modern websites, seemless web experiences, and performance optimization to deliver websites that not only look stunning but perform flawlessly across all devices.</p>
+              <h3 class="mb-4">Crafting Experiences That Drive Business Success</h3>
+              <p class="mb-4">At Knockly, we believe every UK business deserves a fast, beautiful, and accessible website. We specialize in modern web development, seamless user experiences, and performance optimization to deliver websites that not only look stunning but convert visitors into customers across all devices.</p>
 
-              <p class="mb-4">With years of industry expertise and the latest technology, Knockly delivers custom digital solutions designed to help businesses of any size thrive online. Whether you're just starting out or already exceeding expectations, we're here to take your business to the next level.</p>
-
-              
+              <p class="mb-4">With extensive industry expertise and cutting-edge technology, Knockly delivers custom digital solutions designed to help businesses of any size thrive in the competitive online marketplace. Whether you're a startup or an established company, we're here to elevate your digital presence and drive measurable results.</p>
             </div>
           </div>
         </div>
 
         <!-- Process Section -->
-        <div class="row mb-5">
+        <!-- <div class="row mb-5">
           <div class="col-12">
-            <h3 class="text-center mb-5 text-white">Why Choose Knockly</h3>
+            <h3 class="text-center mb-5 text-white">Why Choose Knockly for Your Web Development</h3>
             <div class="process-timeline">
               <div class="process-step">
                 <div class="process-icon">
-                  <i class="bi bi-phone"></i>
+                  <i class="bi bi-phone" aria-hidden="true"></i>
                 </div>
                 <div class="process-content">
-                  <h5>Responsive</h5>
-                  <p>Adjustable layouts that work flawlessly across all devices.</p>
+                  <h4>Mobile-First Responsive Design</h4>
+                  <p>Fully responsive layouts that work flawlessly across all devices, ensuring optimal user experience on mobile, tablet, and desktop.</p>
                 </div>
               </div>
               <div class="process-step">
                 <div class="process-icon">
-                  <i class="bi bi-gear"></i>
+                  <i class="bi bi-gear" aria-hidden="true"></i>
                 </div>
                 <div class="process-content">
-                  <h5>Customization</h5>
-                  <p>Tailored solutions that adapt to your unique requirements.</p>
+                  <h4>Custom Web Development</h4>
+                  <p>Bespoke solutions tailored to your unique business requirements, brand identity, and target audience needs.</p>
                 </div>
               </div>
               <div class="process-step">
                 <div class="process-icon">
-                  <i class="bi bi-speedometer2"></i>
+                  <i class="bi bi-speedometer2" aria-hidden="true"></i>
                 </div>
                 <div class="process-content">
-                  <h5>Performance</h5>
-                  <p>Lightning-fast load times and seamless user navigation.</p>
+                  <h4>Fast Loading Performance</h4>
+                  <p>Optimized for speed with lightning-fast load times, improving user engagement and search engine rankings.</p>
                 </div>
               </div>
               <div class="process-step">
                 <div class="process-icon">
-                  <i class="bi bi-code-slash"></i>
+                  <i class="bi bi-code-slash" aria-hidden="true"></i>
                 </div>
                 <div class="process-content">
-                  <h5>Development</h5>
-                  <p>Clean, efficient code with seamless deployment.</p>
+                  <h4>Modern Development Stack</h4>
+                  <p>Clean, efficient code built with the latest web technologies and seamless deployment processes.</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-darker" id="services">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center section-title mb-5">
+            <h2>Our Web Development Services</h2>
+            <p>Comprehensive web development solutions designed to grow your business online.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-laptop" aria-hidden="true"></i>
+              </div>
+              <h4>Custom Website Development</h4>
+              <p>Bespoke website development with modern design, responsive layouts, and optimized performance tailored to your brand and business goals.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-cart" aria-hidden="true"></i>
+              </div>
+              <h4>E-commerce Development</h4>
+              <p>Professional online stores with secure payment processing, inventory management, and user-friendly shopping experiences that drive sales.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-search" aria-hidden="true"></i>
+              </div>
+              <h4>SEO-Optimized Development</h4>
+              <p>Websites built with SEO best practices from the ground up, helping your business rank higher in search results and attract more customers.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+              </div>
+              <h4>Website Security & Maintenance</h4>
+              <p>Ongoing website security monitoring, regular updates, performance optimization, and technical support to keep your site running smoothly.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-palette" aria-hidden="true"></i>
+              </div>
+              <h4>UI/UX Design</h4>
+              <p>User-centered design that creates intuitive, engaging experiences while maintaining your brand identity and driving conversions.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-graph-up" aria-hidden="true"></i>
+              </div>
+              <h4>Performance Optimization</h4>
+              <p>Speed optimization, mobile performance tuning, and analytics implementation to maximize your website's effectiveness and user satisfaction.</p>
             </div>
           </div>
         </div>
@@ -150,12 +282,12 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="section-darker" id="pricing">
+    <section class="section-dark" id="pricing">
       <div class="container position-relative">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center section-title mb-5">
-            <h2>Choose Your Plan</h2>
-            <p>Flexible pricing plans designed to suit your business needs and budget.</p>
+            <h2>Pricing Plans</h2>
+            <p>Flexible pricing plans designed to suit your business needs and budget. All plans include hosting, security, and ongoing support.</p>
 
             <!-- Billing Toggle -->
             <div class="billing-toggle mb-4">
@@ -172,7 +304,7 @@
         <div class="row g-4">
           <div class="col-lg-4">
             <div class="pricing-card text-center">
-              <h3 class="plan-name">Basic Plan</h3>
+              <h3 class="plan-name">Basic Website Plan</h3>
               <div class="plan-price" data-monthly="£45.00" data-annual="£450.00"></div>
               <div class="plan-period">billed annually</div>
               <ul class="plan-features">
@@ -185,14 +317,14 @@
                 <li>Limited Edits</li>
                 <li>Basic Support</li>
               </ul>
-              <a href="#contact" class="plan-button">Get Started</a>
+              <a href="#contact" class="plan-button" aria-label="Get started with Basic Website Plan">Get Started</a>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="pricing-card popular text-center">
               <div class="popular-badge">Most Popular</div>
-              <h3 class="plan-name">Pro Plan</h3>
+              <h3 class="plan-name">Professional Website Plan</h3>
               <div class="plan-price" data-monthly="£67.50" data-annual="£675.00"></div>
               <div class="plan-period">billed annually</div>
               <ul class="plan-features">
@@ -205,13 +337,13 @@
                 <li>Unlimited Edits</li>
                 <li>Priority Support</li>
               </ul>
-              <a href="#contact" class="plan-button primary">Get Started</a>
+              <a href="#contact" class="plan-button primary" aria-label="Get started with Professional Website Plan">Get Started</a>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="pricing-card text-center">
-              <h3 class="plan-name">E-Commerce</h3>
+              <h3 class="plan-name">E-Commerce Plan</h3>
               <div class="plan-price" data-monthly="£199.50" data-annual="£1995.00"></div>
               <div class="plan-period">billed annually</div>
               <ul class="plan-features">
@@ -224,7 +356,7 @@
                 <li>Unlimited Edits</li>
                 <li>Priority Support</li>
               </ul>
-              <a href="#contact" class="plan-button">Get Started</a>
+              <a href="#contact" class="plan-button" aria-label="Get started with E-Commerce Plan">Get Started</a>
             </div>
           </div>
         </div>
@@ -232,11 +364,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section-dark" id="contact">
+    <section class="section-darker" id="contact">
       <div class="container position-relative">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center section-title mb-5">
-            <h2>Get in Touch</h2>
+            <h2>Get In Touch</h2>
             <p>Send us an email and let us know everything you want out of a new site. We respond to everyone within 24 hours of contacting us.</p>
           </div>
         </div>
@@ -244,48 +376,47 @@
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="contact-form p-4 p-md-5">
-              <h3 class="text-white mb-4">Send us a Message</h3>
+              <h3 class="text-white mb-4">Request Your Free Web Development Consultation</h3>
               <form>
                 <div class="row g-3">
                   <div class="col-12">
-                    <label class="form-label">Name *</label>
-                    <input type="text" class="form-control" placeholder="Enter your full name" required />
+                    <label class="form-label" for="contact-name">Name *</label>
+                    <input type="text" id="contact-name" class="form-control" placeholder="Enter your full name" required />
                   </div>
 
                   <div class="col-12">
-                    <label class="form-label">Email Address *</label>
-                    <input type="email" class="form-control" placeholder="Enter your email" required />
+                    <label class="form-label" for="contact-email">Email Address *</label>
+                    <input type="email" id="contact-email" class="form-control" placeholder="Enter your email" required />
                   </div>
 
                   <div class="col-12">
-                    <label class="form-label">Phone Number</label>
-                    <input type="tel" class="form-control" placeholder="Enter your phone number" />
+                    <label class="form-label" for="contact-phone">Phone Number</label>
+                    <input type="tel" id="contact-phone" class="form-control" placeholder="Enter your phone number" />
                   </div>
 
                   <div class="col-12">
-                    <label class="form-label">Project Details *</label>
-                    <textarea class="form-control form-textarea" placeholder="Tell us about your project, goals, and requirements..." required></textarea>
+                    <label class="form-label" for="contact-project">Project Details *</label>
+                    <textarea id="contact-project" class="form-control form-textarea" placeholder="Tell us about your website project, goals, target audience, and any specific requirements..." required></textarea>
                   </div>
 
                   <div class="col-12">
-                    <button type="submit" class="btn-submit mt-3">Send Message</button>
+                    <button type="submit" class="btn-submit mt-3">Send Free Request</button>
                   </div>
                 </div>
               </form>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- FAQs Section -->
-    <section class="section-darker" id="faqs">
+    <section class="section-dark" id="faqs">
       <div class="container position-relative">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center section-title mb-5">
-            <h2>Frequently Asked Questions</h2>
-            <p>Get answers to common questions about our web development services</p>
+            <h2>Web Development FAQs</h2>
+            <p>Common questions about our UK web development services, pricing, and process</p>
           </div>
         </div>
 
@@ -293,73 +424,73 @@
           <div class="col-lg-10 mx-auto">
             <div class="faq-container">
               <div class="faq-item">
-                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                  <span>How long does it take to build a website?</span>
-                  <i class="bi bi-chevron-down"></i>
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                  <span>How long does website development take?</span>
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="collapse" id="faq1">
                   <div class="faq-answer">
-                    <p>Project timelines vary depending on the complexity of your site. A custom website typically takes 1-2 weeks, while e-commerce platforms can take 2-4 weeks.</p>
+                    <p>Website development timelines vary based on complexity and features. A standard business website typically takes 1-2 weeks, while custom e-commerce platforms require 2-4 weeks. We provide detailed timelines during our initial consultation.</p>
                   </div>
                 </div>
               </div>
 
               <div class="faq-item">
-                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                  <span>What services are included in your website plans?</span>
-                  <i class="bi bi-chevron-down"></i>
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                  <span>What's included in your web development packages?</span>
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="collapse" id="faq2">
                   <div class="faq-answer">
-                    <p>Our plans include custom design & development, responsive layouts, SEO implementation, hosting & domain, branding integration, secure connections, edits based on your plan, and support. Higher-tier plans offer additional features like analytics, speed optimization, animations, and priority support.</p>
+                    <p>All plans include custom design & development, mobile-responsive layouts, SEO optimization, free hosting & domain, SSL security, brand integration, and ongoing support. Higher-tier plans add analytics, advanced features, unlimited edits, and priority support.</p>
                   </div>
                 </div>
               </div>
 
               <div class="faq-item">
-                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                  <span>How customizable are your websites?</span>
-                  <i class="bi bi-chevron-down"></i>
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                  <span>Can you work with existing brand guidelines?</span>
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="collapse" id="faq3">
                   <div class="faq-answer">
-                    <p>Our websites are highly customizable. From layout and branding to interactive features, animations, and integrations, we tailor your site to match your unique requirements.</p>
+                    <p>Absolutely! We seamlessly integrate existing brand guidelines including colors, fonts, logos, and visual identity into modern, responsive web designs that maintain brand consistency while improving user experience.</p>
                   </div>
                 </div>
               </div>
 
               <div class="faq-item">
-                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                  <span>How do I get started with Knockly?</span>
-                  <i class="bi bi-chevron-down"></i>
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                  <span>Do you provide ongoing website maintenance?</span>
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="collapse" id="faq4">
                   <div class="faq-answer">
-                    <p>Getting started is easy! Reach out via our contact form with your project details, and we'll respond within 24 hours to discuss your website goals.</p>
+                    <p>Yes, all our plans include ongoing maintenance, security updates, performance monitoring, and technical support. We ensure your website stays secure, fast, and up-to-date with the latest web standards.</p>
                   </div>
                 </div>
               </div>
 
               <div class="faq-item">
-                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                  <span>Do you build e-commerce websites?</span>
-                  <i class="bi bi-chevron-down"></i>
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                  <span>Will my website be mobile-friendly and SEO optimized?</span>
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="collapse" id="faq5">
                   <div class="faq-answer">
-                    <p>Yes, we specialize in custom e-commerce solutions, including Shopify stores, payment gateway integration, inventory management, admin dashboards, and full tutorials on using your platform.</p>
+                    <p>Every website we develop is fully responsive (mobile-friendly) and built with SEO best practices. This includes fast loading speeds, proper heading structure, meta tags, and clean code that search engines love.</p>
                   </div>
                 </div>
               </div>
 
               <div class="faq-item">
-                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
-                  <span>Can you work with my existing brand guidelines?</span>
-                  <i class="bi bi-chevron-down"></i>
+                <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                  <span>How do I get started with Knockly?</span>
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="collapse" id="faq6">
                   <div class="faq-answer">
-                    <p>Definitely! We love working within existing brand guidelines and can seamlessly integrate your brand colors, fonts, logos, and visual identity into a modern web experience that maintains brand consistency.</p>
+                    <p>Getting started is simple! Contact us through our form above with your project details, and we'll respond within 24 hours to discuss your website goals and requirements.</p>
                   </div>
                 </div>
               </div>
@@ -374,11 +505,13 @@
       <div class="container position-relative">
         <div class="row g-4">
           <div class="col-lg-6 text-center text-lg-start">
-            <div class="footer-logo"><img src="assets/images/knockly-logo.png" class="knockly-logo" alt="Knockly Logo"></div>
-            <p class="footer-description">Every business deserves a standout online presence. Being small doesn't mean your website should be. Let us create something exceptional for you.</p>
+            <div class="footer-logo">
+              <img src="assets/images/knockly-logo.png" class="knockly-logo" alt="Knockly - Professional Web Development Services UK">
+            </div>
+            <p class="footer-description">Every UK business deserves a standout online presence. Being small doesn't mean your website should be. Let us create something exceptional that drives real results for your business.</p>
             <p class="mb-2">
                 <strong>Email:</strong><br />
-                <a href="mailto:support@knockly.co.uk">support@knockly.co.uk</a>
+                <a href="mailto:knocklywebsites@gmail.com">knocklywebsites@gmail.com</a>
               </p>
           </div>
 
@@ -403,7 +536,7 @@
           </div>
 
         <div class="footer-bottom text-center">
-          <p class="mb-0">&copy; 2025 Knockly. All rights reserved.</p>
+          <p class="mb-0">&copy; 2025 Knockly. All rights reserved. Professional web development services across the United Kingdom.</p>
         </div>
       </div>
     </footer>
